@@ -4,6 +4,8 @@ import GlobalDashboard from './components/GlobalDashboard';
 import IndicatorChart from './components/IndicatorChart';
 import Hero from './components/Hero';
 import ArticleCard from './components/ArticleCard';
+import MassAttendanceDashboard from './components/MassAttendanceDashboard';
+import { massAttendanceData } from './data/massAttendance';
 
 // Global Data (Proof of Concept)
 const globalCatholicData = {
@@ -30,7 +32,7 @@ const usLines = [
 ];
 
 function App() {
-  const [currentView, setCurrentView] = useState<'home' | 'global' | 'us'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'global' | 'us' | 'mass-attendance'>('home');
 
   if (currentView === 'global') {
     return (
@@ -61,60 +63,63 @@ function App() {
     );
   }
 
+  if (currentView === 'mass-attendance') {
+    return (
+      <div className="container">
+        <button onClick={() => setCurrentView('home')} style={{ background: 'none', border: 'none', color: '#2c5282', cursor: 'pointer', marginBottom: '2rem', fontSize: '1rem', fontWeight: 'bold' }}>&larr; Back to Home</button>
+        <section style={{ marginBottom: '4rem' }}>
+          <h2>Mass attendance post-Vatican II (1950 - 2023)</h2>
+          <p style={{ fontSize: '0.95rem', color: '#555', marginBottom: '1.5rem' }}>
+            Tracking the trends in weekly Sunday Mass attendance percentages across major Western nations.
+          </p>
+          <MassAttendanceDashboard data={massAttendanceData} />
+        </section>
+      </div>
+    );
+  }
+
   // Home View
   return (
     <>
       <header style={{ padding: '10px 20px', borderBottom: '1px solid #e5e5e5', fontWeight: 'bold', fontSize: '1.2rem', fontFamily: 'Playfair Display, serif' }}>
-        CALEB <span style={{ fontSize: '0.8rem', fontWeight: 'normal', color: '#555', marginLeft: '10px', fontFamily: 'Lato, sans-serif' }}>| Catholic Atlas of Longitudinal Ecclesiology & Benchmarks</span>
+        CALEB <span style={{ fontSize: '0.8rem', fontWeight: 'normal', color: '#555', marginLeft: '10px', fontFamily: 'Lato, sans-serif' }}>| Catholic atlas of longitudinal ecclesiology & benchmarks</span>
       </header>
       <Hero />
       <div className="container">
         <div className="article-grid">
           <ArticleCard 
-            title="Global Catholic Population Growth"
+            title="Global Catholic population growth"
             category="Demographics"
-            author="Data Research Team"
-            date="June 2026"
             excerpt="Explore the demographic shifts of the Catholic Church around the world from 1980 to 2020 using our interactive map."
             onClick={() => setCurrentView('global')}
           />
           <ArticleCard 
-            title="Vocations & Infrastructure in the US"
+            title="Vocations & infrastructure in the US"
             category="US Indicators"
-            author="Data Research Team"
-            date="Historical Data"
             excerpt="Data tracking vocations, ordinations, and parish infrastructure in the US from 1965 to 2023, based on the Catholic Indicators Index."
             onClick={() => setCurrentView('us')}
           />
           <ArticleCard 
-            title="The Rise of Catholicism in Sub-Saharan Africa"
+            title="The rise of Catholicism in Sub-Saharan Africa"
             category="Regional Trends"
-            author="Demographics Team"
-            date="June 2026"
             excerpt="An in-depth look at how the center of gravity in the Catholic Church is shifting rapidly toward the Global South."
             onClick={() => alert('Article coming soon!')}
           />
           <ArticleCard 
-            title="Mass Attendance Post-Vatican II"
+            title="Mass attendance post-Vatican II"
             category="Liturgical Life"
-            author="Historical Analytics"
-            date="May 2026"
             excerpt="Tracking the trends in weekly Sunday Mass attendance across major Western nations over the last six decades."
-            onClick={() => alert('Article coming soon!')}
+            onClick={() => setCurrentView('mass-attendance')}
           />
           <ArticleCard 
-            title="The Impact of Priestless Parishes"
+            title="The impact of priestless parishes"
             category="Infrastructure"
-            author="Pastoral Research"
-            date="April 2026"
             excerpt="How the consolidation of parishes and the lack of resident pastors are affecting rural Catholic communities."
             onClick={() => alert('Article coming soon!')}
           />
           <ArticleCard 
-            title="Catholic Education Enrollment Trends"
+            title="Catholic education enrollment trends"
             category="Education"
-            author="Global Data"
-            date="March 2026"
             excerpt="A comprehensive dataset tracking the number of students enrolled in Catholic primary and secondary schools globally."
             onClick={() => alert('Article coming soon!')}
           />
