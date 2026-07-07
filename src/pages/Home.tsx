@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import ArticleCard from '../components/ArticleCard';
-import { LineChart, Line, AreaChart, Area, ResponsiveContainer, YAxis } from 'recharts';
+import { LineChart, Line, AreaChart, Area, BarChart, Bar, ResponsiveContainer, YAxis } from 'recharts';
 import { massAttendanceData } from '../data/massAttendance';
 import { sacramentalData } from '../data/sacraments';
 
@@ -42,6 +42,19 @@ const MiniLineChart = ({ data, lines }: { data: any[], lines: {key: string, colo
           <Line key={i} type="monotone" dataKey={line.key} stroke={line.color} strokeWidth={2} dot={false} isAnimationActive={false} />
         ))}
       </LineChart>
+    </ResponsiveContainer>
+  </div>
+);
+
+const MiniBarChart = ({ data, bars }: { data: any[], bars: {key: string, color: string}[] }) => (
+  <div style={{ width: '100%', height: '100%', padding: '20px 0 0 0', backgroundColor: '#fcfcfc' }}>
+    <ResponsiveContainer width="100%" height="100%">
+      <BarChart data={data}>
+        <YAxis domain={['dataMin', 'dataMax']} hide />
+        {bars.map((bar, i) => (
+          <Bar key={i} dataKey={bar.key} fill={bar.color} isAnimationActive={false} />
+        ))}
+      </BarChart>
     </ResponsiveContainer>
   </div>
 );
@@ -95,7 +108,7 @@ const Home: React.FC = () => {
               title="The Sacramental Pipeline"
               category="Leading Indicators"
               excerpt="Tracking the direct correlation between Catholic marriages and infant baptisms over time to predict future growth."
-              preview={<MiniLineChart data={sacramentalData} lines={[{key: 'marriages', color: '#c53030'}, {key: 'baptisms', color: '#2c5282'}]} />}
+              preview={<MiniBarChart data={sacramentalData} bars={[{key: 'marriages', color: '#c53030'}, {key: 'baptisms', color: '#2c5282'}]} />}
             />
           </Link>
         </div>
