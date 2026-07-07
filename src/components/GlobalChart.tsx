@@ -190,12 +190,47 @@ const GlobalChart: React.FC<GlobalChartProps> = ({ data, viewMode = 'absolute' }
               }}
             />
             <Tooltip 
-              formatter={(value: any, name: string, props: any) => {
-                const countryName = data[props.dataKey]?.name || name;
-                if (viewMode === 'percentage') return [`${value}%`, countryName];
-                return [new Intl.NumberFormat('en-US').format(value), countryName];
+              content={({ active, payload, label }) => {
+                if (active && payload && payload.length) {
+                  // Sort payload by value descending so the highest is at top of tooltip
+                  const sortedPayload = [...payload].sort((a, b) => (b.value as number) - (a.value as number));
+                  
+                  return (
+                    <div style={{
+                      backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                      padding: '12px',
+                      border: '1px solid #e5e5e5',
+                      borderRadius: '8px',
+                      boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+                      minWidth: '200px'
+                    }}>
+                      <div style={{ fontWeight: 600, fontSize: '1rem', color: '#1a202c', marginBottom: '2px' }}>{label}</div>
+                      <div style={{ fontSize: '0.75rem', color: '#718096', marginBottom: '8px', paddingBottom: '8px', borderBottom: '1px solid #e2e8f0' }}>in people</div>
+                      
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                        {sortedPayload.map((entry, index) => {
+                          const val = viewMode === 'percentage' 
+                            ? `${entry.value}%`
+                            : new Intl.NumberFormat('en-US', { notation: 'compact', maximumSignificantDigits: 4 }).format(entry.value as number);
+                            
+                          return (
+                            <div key={index} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.85rem' }}>
+                              <div style={{ display: 'flex', alignItems: 'center', color: '#4a5568' }}>
+                                <div style={{ width: '12px', height: '12px', backgroundColor: entry.color, marginRight: '8px', borderRadius: '2px' }} />
+                                {entry.name}
+                              </div>
+                              <div style={{ fontWeight: 600, color: '#1a202c', marginLeft: '16px' }}>
+                                {val}
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  );
+                }
+                return null;
               }}
-              contentStyle={{ borderRadius: '8px', border: '1px solid #e5e5e5' }}
             />
             {selectedCountries.map((iso, index) => (
               <Line
@@ -204,9 +239,9 @@ const GlobalChart: React.FC<GlobalChartProps> = ({ data, viewMode = 'absolute' }
                 dataKey={iso}
                 name={data[iso]?.name}
                 stroke={colors[index % colors.length]}
-                strokeWidth={3}
-                dot={{ r: 4 }}
-                activeDot={{ r: 6 }}
+                strokeWidth={1.5}
+                dot={false}
+                activeDot={{ r: 4, strokeWidth: 0 }}
               />
             ))}
           </LineChart>

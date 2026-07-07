@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { ComposableMap, Geographies, Geography, ZoomableGroup } from 'react-simple-maps';
+import { ComposableMap, Geographies, Geography } from 'react-simple-maps';
 import { scaleSqrt, scaleLinear } from 'd3-scale';
 import isoCountries from 'i18n-iso-countries';
 import en from 'i18n-iso-countries/langs/en.json';
+import { LineChart, Line, YAxis, ResponsiveContainer } from 'recharts';
 
 isoCountries.registerLocale(en);
 
@@ -15,7 +16,8 @@ interface GlobalMapProps {
 }
 
 const GlobalMap: React.FC<GlobalMapProps> = ({ data, year = 2020, viewMode = 'absolute' }) => {
-  const [tooltipContent, setTooltipContent] = useState('');
+  const [hoveredCountry, setHoveredCountry] = useState<any>(null);
+  const [hoverPosition, setHoverPosition] = useState({ x: 0, y: 0 });
   
   // Use scaleSqrt for absolute pop to compress top end
   const colorScaleAbs = scaleSqrt<string>()
@@ -27,31 +29,67 @@ const GlobalMap: React.FC<GlobalMapProps> = ({ data, year = 2020, viewMode = 'ab
     .domain([0, 100])
     .range(["#fef2f2", "#991b1b"]); // Light red to deep dark red
 
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (hoveredCountry) {
+      setHoverPosition({ x: e.clientX, y: e.clientY });
+    }
+  };
+
   return (
-    <div className="map-container" style={{ width: '100%', position: 'relative' }}>
+    <div className="map-container" style={{ width: '100%', position: 'relative' }} onMouseMove={handleMouseMove}>
       
-      {tooltipContent && (
+      {/* OWID-style Rich Tooltip */}
+      {hoveredCountry && hoveredCountry.point && (
         <div style={{
-          position: 'absolute',
-          top: '10px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          backgroundColor: 'rgba(255, 255, 255, 0.9)',
-          padding: '8px 12px',
+          position: 'fixed',
+          top: hoverPosition.y + 15,
+          left: hoverPosition.x + 15,
+          backgroundColor: '#fff',
+          padding: '12px',
           borderRadius: '4px',
-          boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
           pointerEvents: 'none',
-          zIndex: 10,
-          fontWeight: 'bold',
-          color: '#2d3748'
+          zIndex: 100,
+          minWidth: '220px',
+          border: '1px solid #e2e8f0'
         }}>
-          {tooltipContent}
+          <div style={{ fontWeight: 600, fontSize: '0.9rem', color: '#1a202c', marginBottom: '2px' }}>
+            {hoveredCountry.d.name}
+          </div>
+          <div style={{ fontSize: '0.75rem', color: '#718096', marginBottom: '8px' }}>
+            {year}
+          </div>
+          
+          <div style={{ fontSize: '1.2rem', fontWeight: 700, color: '#3182ce', marginBottom: '12px' }}>
+            {viewMode === 'absolute' 
+              ? new Intl.NumberFormat('en-US', { notation: 'compact', maximumSignificantDigits: 4 }).format(hoveredCountry.point.population)
+              : `${hoveredCountry.point.percentage}%`}
+          </div>
+
+          <div style={{ height: '60px', width: '100%' }}>
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={hoveredCountry.d.data}>
+                <YAxis domain={['auto', 'auto']} hide />
+                <Line 
+                  type="monotone" 
+                  dataKey={viewMode === 'absolute' ? 'population' : 'percentage'} 
+                  stroke="#3182ce" 
+                  strokeWidth={2} 
+                  dot={false} 
+                />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.65rem', color: '#a0aec0', marginTop: '4px' }}>
+            <span>1960</span>
+            <span>2022</span>
+          </div>
         </div>
       )}
 
+      {/* Map */}
       <div style={{ width: '100%', height: '500px', backgroundColor: '#f4f3ec', borderRadius: '8px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
         <ComposableMap projectionConfig={{ scale: 140 }} width={800} height={450} style={{ width: "100%", height: "100%" }}>
-          <ZoomableGroup>
             <Geographies geography={geoUrl}>
               {({ geographies }) =>
                 geographies.map((geo) => {
@@ -62,7 +100,6 @@ const GlobalMap: React.FC<GlobalMapProps> = ({ data, year = 2020, viewMode = 'ab
                   }
                   
                   const d = (iso3 ? data[iso3] : null) || Object.values(data).find((c: any) => c.name === geo.properties?.name);
-                  
                   const point = d?.data?.find((item: any) => item.year === year);
                   
                   let fill = "#EAEAEA";
@@ -83,16 +120,13 @@ const GlobalMap: React.FC<GlobalMapProps> = ({ data, year = 2020, viewMode = 'ab
                       strokeWidth={0.5}
                       onMouseEnter={() => {
                         if (d && point) {
-                          const val = viewMode === 'absolute' 
-                            ? new Intl.NumberFormat('en-US').format(point.population)
-                            : `${point.percentage}%`;
-                          setTooltipContent(`${d.name}: ${val}`);
+                          setHoveredCountry({ d, point });
                         } else {
-                          setTooltipContent(`${geo.properties?.name}: No data`);
+                          setHoveredCountry(null);
                         }
                       }}
                       onMouseLeave={() => {
-                        setTooltipContent('');
+                        setHoveredCountry(null);
                       }}
                       style={{
                         default: { outline: "none", transition: 'all 250ms' },
@@ -104,9 +138,16 @@ const GlobalMap: React.FC<GlobalMapProps> = ({ data, year = 2020, viewMode = 'ab
                 })
               }
             </Geographies>
-          </ZoomableGroup>
         </ComposableMap>
       </div>
+
+      {/* Legend */}
+      <div style={{ marginTop: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', fontSize: '0.8rem', color: '#4a5568' }}>
+        <span>Low</span>
+        <div style={{ width: '200px', height: '12px', background: viewMode === 'absolute' ? 'linear-gradient(to right, #e0e7ff, #1e3a8a)' : 'linear-gradient(to right, #fef2f2, #991b1b)', borderRadius: '4px' }}></div>
+        <span>High</span>
+      </div>
+
     </div>
   );
 };
