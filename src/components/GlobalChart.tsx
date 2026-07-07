@@ -17,10 +17,12 @@ interface GlobalChartProps {
 
 const GlobalChart: React.FC<GlobalChartProps> = ({ data, viewMode = 'absolute' }) => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [sortBy, setSortBy] = useState<'alphabetical' | 'population'>('alphabetical');
   // Default selected countries (Top 5 populated Catholic countries)
   const [selectedCountries, setSelectedCountries] = useState<string[]>(['BRA', 'MEX', 'PHL', 'USA', 'ITA']);
 
-  const years = [1980, 2000, 2020]; 
+  // Generate years from 1960 to 2022
+  const years = useMemo(() => Array.from({ length: 2022 - 1960 + 1 }, (_, i) => 1960 + i), []);
   
   const chartData = useMemo(() => {
     return years.map(year => {
@@ -33,7 +35,7 @@ const GlobalChart: React.FC<GlobalChartProps> = ({ data, viewMode = 'absolute' }
       });
       return point;
     });
-  }, [data, selectedCountries, viewMode]);
+  }, [data, selectedCountries, viewMode, years]);
 
   const colors = [
     "#2c5282", "#c53030", "#276749", "#dd6b20", "#805ad5", 
@@ -50,7 +52,23 @@ const GlobalChart: React.FC<GlobalChartProps> = ({ data, viewMode = 'absolute' }
 
   const filteredCountries = Object.keys(data).filter(iso => 
     data[iso].name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  ).sort((a, b) => {
+    const aSelected = selectedCountries.includes(a);
+    const bSelected = selectedCountries.includes(b);
+    
+    // Selected countries always float to the top
+    if (aSelected && !bSelected) return -1;
+    if (!aSelected && bSelected) return 1;
+    
+    // Sort the rest by criteria
+    if (sortBy === 'alphabetical') {
+      return data[a].name.localeCompare(data[b].name);
+    } else {
+      const popA = data[a].data.find((d: any) => d.year === 2020)?.population || 0;
+      const popB = data[b].data.find((d: any) => d.year === 2020)?.population || 0;
+      return popB - popA; // Descending
+    }
+  });
 
   return (
     <div style={{ display: 'flex', gap: '20px', height: '500px' }}>
@@ -65,11 +83,11 @@ const GlobalChart: React.FC<GlobalChartProps> = ({ data, viewMode = 'absolute' }
         backgroundColor: '#fff'
       }}>
         <div style={{ padding: '12px', borderBottom: '1px solid #e5e5e5' }}>
-          <div style={{ position: 'relative' }}>
+          <div style={{ position: 'relative', marginBottom: '8px' }}>
             <Search size={16} style={{ position: 'absolute', left: '8px', top: '8px', color: '#a0aec0' }} />
             <input 
               type="text" 
-              placeholder="Search country..." 
+              placeholder="Type to add a country..." 
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               style={{ 
@@ -77,33 +95,70 @@ const GlobalChart: React.FC<GlobalChartProps> = ({ data, viewMode = 'absolute' }
                 padding: '6px 8px 6px 30px', 
                 borderRadius: '4px', 
                 border: '1px solid #cbd5e0',
-                fontSize: '0.9rem'
+                fontSize: '0.85rem'
               }}
             />
           </div>
-        </div>
-        <div style={{ overflowY: 'auto', flex: 1, padding: '10px' }}>
-          {filteredCountries.map(iso => (
-            <label 
-              key={iso} 
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <span style={{ fontSize: '0.8rem', color: '#718096' }}>Sort by</span>
+            <select 
+              value={sortBy} 
+              onChange={(e) => setSortBy(e.target.value as any)}
               style={{ 
-                display: 'flex', 
-                alignItems: 'center', 
-                padding: '6px 0', 
-                cursor: 'pointer',
-                fontSize: '0.9rem',
-                color: '#4a5568'
+                fontSize: '0.8rem', 
+                padding: '2px 4px', 
+                border: '1px solid #e2e8f0', 
+                borderRadius: '4px',
+                color: '#4a5568',
+                backgroundColor: '#f7fafc',
+                cursor: 'pointer'
               }}
             >
-              <input 
-                type="checkbox" 
-                checked={selectedCountries.includes(iso)}
-                onChange={() => handleToggleCountry(iso)}
-                style={{ marginRight: '8px' }}
-              />
-              {data[iso].name}
-            </label>
-          ))}
+              <option value="alphabetical">A to Z</option>
+              <option value="population">Population</option>
+            </select>
+          </div>
+        </div>
+        
+        <div style={{ overflowY: 'auto', flex: 1, padding: '4px 0' }}>
+          {filteredCountries.map(iso => {
+            const isSelected = selectedCountries.includes(iso);
+            return (
+              <label 
+                key={iso} 
+                style={{ 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  padding: '6px 12px', 
+                  cursor: 'pointer',
+                  fontSize: '0.85rem',
+                  color: isSelected ? '#1a202c' : '#4a5568',
+                  backgroundColor: isSelected ? '#f0f4f8' : 'transparent',
+                  borderBottom: '1px solid #f7fafc',
+                  transition: 'background-color 0.15s'
+                }}
+                onMouseEnter={(e) => {
+                  if (!isSelected) e.currentTarget.style.backgroundColor = '#f7fafc';
+                }}
+                onMouseLeave={(e) => {
+                  if (!isSelected) e.currentTarget.style.backgroundColor = 'transparent';
+                }}
+              >
+                <input 
+                  type="checkbox" 
+                  checked={isSelected}
+                  onChange={() => handleToggleCountry(iso)}
+                  style={{ 
+                    marginRight: '10px',
+                    accentColor: '#3182ce' // Uses native OS styling for the blue checkbox
+                  }}
+                />
+                <span style={{ fontWeight: isSelected ? 600 : 400 }}>
+                  {data[iso].name}
+                </span>
+              </label>
+            );
+          })}
         </div>
       </div>
 

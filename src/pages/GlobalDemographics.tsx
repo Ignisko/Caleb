@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import GlobalDashboard from '../components/GlobalDashboard';
 
-import globalCatholicData from '../data/globalCatholicData';
+import globalCatholicData from '../data/globalCatholicData.json';
 
 const GlobalDemographics: React.FC = () => {
   return (
