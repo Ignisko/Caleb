@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div style={{ marginTop: '2rem', fontSize: '0.85rem', color: '#777', borderTop: '1px solid #ddd', paddingTop: '2rem' }}>
-          <p>CALEB | Catholic Atlas of Longitudinal Ecclesiology & Benchmarks</p>
+          <p>CALEB | Catholic atlas of longitudinal ecclesiology & benchmarks</p>
           <p>A solo project built for the greater glory of God (AMDG).</p>
         </div>
         
