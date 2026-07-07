@@ -346,6 +346,546 @@ export const globalCatholicData: Record<string, CountryEntry> = {
   "PNG": { name: "Papua New Guinea",  region: "Oceania",
     notes: "[est] ~27% Catholic; strong missionary presence",
     data: [ { year: 1980, population: 800000 }, { year: 2000, population: 1400000 }, { year: 2020, population: 2700000 } ] },
+
+  // ══════════════════════════════════════════════════
+  // NEW WIKIPEDIA IMPORT (Auto-generated estimates for 1980/2000)
+  // ══════════════════════════════════════════════════
+
+  "ALB": { name: "Albania", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 115477 }, { year: 2000, population: 152558 }, { year: 2020, population: 201530 } ] },
+
+  "DZA": { name: "Algeria", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 5157 }, { year: 2000, population: 6813 }, { year: 2020, population: 9000 } ] },
+
+  "AND": { name: "Andorra", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 35377 }, { year: 2000, population: 46737 }, { year: 2020, population: 61740 } ] },
+
+  "ATG": { name: "Antigua and Barbuda", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 2723 }, { year: 2000, population: 3597 }, { year: 2020, population: 4752 } ] },
+
+  "ARM": { name: "Armenia", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 10248 }, { year: 2000, population: 13538 }, { year: 2020, population: 17884 } ] },
+
+  "AZE": { name: "Azerbaijan", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 327 }, { year: 2000, population: 431 }, { year: 2020, population: 570 } ] },
+
+  "BHS": { name: "Bahamas", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 22691 }, { year: 2000, population: 29977 }, { year: 2020, population: 39600 } ] },
+
+  "BHR": { name: "Bahrain", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 45840 }, { year: 2000, population: 60560 }, { year: 2020, population: 80000 } ] },
+
+  "BGD": { name: "Bangladesh", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 63030 }, { year: 2000, population: 83270 }, { year: 2020, population: 110000 } ] },
+
+  "BRB": { name: "Barbados", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 5730 }, { year: 2000, population: 7570 }, { year: 2020, population: 10000 } ] },
+
+  "BLR": { name: "Belarus", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 386488 }, { year: 2000, population: 510597 }, { year: 2020, population: 674500 } ] },
+
+  "BLZ": { name: "Belize", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 76553 }, { year: 2000, population: 101135 }, { year: 2020, population: 133600 } ] },
+
+  "BEN": { name: "Benin", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 1137042 }, { year: 2000, population: 1502165 }, { year: 2020, population: 1984366 } ] },
+
+  "BTN": { name: "Bhutan", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 767 }, { year: 2000, population: 1014 }, { year: 2020, population: 1339 } ] },
+
+  "BIH": { name: "Bosnia and Herzegovina", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 189815 }, { year: 2000, population: 250768 }, { year: 2020, population: 331266 } ] },
+
+  "BWA": { name: "Botswana", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 46049 }, { year: 2000, population: 60836 }, { year: 2020, population: 80365 } ] },
+
+  "BRN": { name: "Brunei", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 22180 }, { year: 2000, population: 29303 }, { year: 2020, population: 38709 } ] },
+
+  "BGR": { name: "Bulgaria", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 22180 }, { year: 2000, population: 29303 }, { year: 2020, population: 38709 } ] },
+
+  "BFA": { name: "Burkina Faso", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 2361640 }, { year: 2000, population: 3120003 }, { year: 2020, population: 4121536 } ] },
+
+  "CPV": { name: "Cabo Verde", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 226822 }, { year: 2000, population: 299658 }, { year: 2020, population: 395850 } ] },
+
+  "CAF": { name: "Central African Republic", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 544335 }, { year: 2000, population: 719130 }, { year: 2020, population: 949974 } ] },
+
+  "TCD": { name: "Chad", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 1443960 }, { year: 2000, population: 1907640 }, { year: 2020, population: 2520000 } ] },
+
+  "COM": { name: "Comoros", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 917 }, { year: 2000, population: 1211 }, { year: 2020, population: 1600 } ] },
+
+  "CYP": { name: "Cyprus", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 7942 }, { year: 2000, population: 10492 }, { year: 2020, population: 13860 } ] },
+
+  "CIV": { name: "Côte d'Ivoire", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 2918289 }, { year: 2000, population: 3855401 }, { year: 2020, population: 5093000 } ] },
+
+  "DNK": { name: "Denmark", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 33234 }, { year: 2000, population: 43906 }, { year: 2020, population: 58000 } ] },
+
+  "DJI": { name: "Djibouti", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 546 }, { year: 2000, population: 721 }, { year: 2020, population: 953 } ] },
+
+  "DMA": { name: "Dominica", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 23816 }, { year: 2000, population: 31464 }, { year: 2020, population: 41564 } ] },
+
+  "GNQ": { name: "Equatorial Guinea", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 807930 }, { year: 2000, population: 1067370 }, { year: 2020, population: 1410000 } ] },
+
+  "EGY": { name: "Egypt", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 114600 }, { year: 2000, population: 151400 }, { year: 2020, population: 200000 } ] },
+
+  "ERI": { name: "Eritrea", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 86255 }, { year: 2000, population: 113953 }, { year: 2020, population: 150532 } ] },
+
+  "EST": { name: "Estonia", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 4979 }, { year: 2000, population: 6578 }, { year: 2020, population: 8690 } ] },
+
+  "FJI": { name: "Fiji", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 46070 }, { year: 2000, population: 60864 }, { year: 2020, population: 80401 } ] },
+
+  "FIN": { name: "Finland", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 9589 }, { year: 2000, population: 12668 }, { year: 2020, population: 16734 } ] },
+
+  "GAB": { name: "Gabon", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 398006 }, { year: 2000, population: 525812 }, { year: 2020, population: 694600 } ] },
+
+  "GMB": { name: "Gambia", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 19171 }, { year: 2000, population: 25328 }, { year: 2020, population: 33458 } ] },
+
+  "GEO": { name: "Georgia", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 11002 }, { year: 2000, population: 14534 }, { year: 2020, population: 19200 } ] },
+
+  "GRC": { name: "Greece", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 143250 }, { year: 2000, population: 189250 }, { year: 2020, population: 250000 } ] },
+
+  "GRD": { name: "Grenada", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 25785 }, { year: 2000, population: 34065 }, { year: 2020, population: 45000 } ] },
+
+  "GIN": { name: "Guinea", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 141052 }, { year: 2000, population: 186346 }, { year: 2020, population: 246164 } ] },
+
+  "GNB": { name: "Guinea-Bissau", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 72213 }, { year: 2000, population: 95402 }, { year: 2020, population: 126026 } ] },
+
+  "GUY": { name: "Guyana", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 30388 }, { year: 2000, population: 40147 }, { year: 2020, population: 53034 } ] },
+
+  "ISL": { name: "Iceland", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 8915 }, { year: 2000, population: 11777 }, { year: 2020, population: 15558 } ] },
+
+  "IRN": { name: "Iran", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 1146 }, { year: 2000, population: 1514 }, { year: 2020, population: 2000 } ] },
+
+  "IRQ": { name: "Iraq", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 57300 }, { year: 2000, population: 75700 }, { year: 2020, population: 100000 } ] },
+
+  "ISR": { name: "Israel", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 68760 }, { year: 2000, population: 90840 }, { year: 2020, population: 120000 } ] },
+
+  "JAM": { name: "Jamaica", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 34011 }, { year: 2000, population: 44932 }, { year: 2020, population: 59356 } ] },
+
+  "JOR": { name: "Jordan", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 25212 }, { year: 2000, population: 33308 }, { year: 2020, population: 44000 } ] },
+
+  "KAZ": { name: "Kazakhstan", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 52209 }, { year: 2000, population: 68974 }, { year: 2020, population: 91115 } ] },
+
+  "KIR": { name: "Kiribati", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 40301 }, { year: 2000, population: 53242 }, { year: 2020, population: 70333 } ] },
+
+  "XKX": { name: "Kosovo", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 15938 }, { year: 2000, population: 21056 }, { year: 2020, population: 27815 } ] },
+
+  "KWT": { name: "Kuwait", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 155856 }, { year: 2000, population: 205904 }, { year: 2020, population: 272000 } ] },
+
+  "KGZ": { name: "Kyrgyzstan", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 2949 }, { year: 2000, population: 3896 }, { year: 2020, population: 5146 } ] },
+
+  "LSO": { name: "Lesotho", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 542058 }, { year: 2000, population: 716122 }, { year: 2020, population: 946000 } ] },
+
+  "LBR": { name: "Liberia", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 107746 }, { year: 2000, population: 142346 }, { year: 2020, population: 188039 } ] },
+
+  "LBY": { name: "Libya", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 23125 }, { year: 2000, population: 30551 }, { year: 2020, population: 40358 } ] },
+
+  "LIE": { name: "Liechtenstein", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 16044 }, { year: 2000, population: 21196 }, { year: 2020, population: 28000 } ] },
+
+  "LUX": { name: "Luxembourg", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 181641 }, { year: 2000, population: 239969 }, { year: 2020, population: 317000 } ] },
+
+  "MYS": { name: "Malaysia", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 762090 }, { year: 2000, population: 1006810 }, { year: 2020, population: 1330000 } ] },
+
+  "MDV": { name: "Maldives", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 46 }, { year: 2000, population: 61 }, { year: 2020, population: 80 } ] },
+
+  "MLI": { name: "Mali", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 108463 }, { year: 2000, population: 143292 }, { year: 2020, population: 189289 } ] },
+
+  "MHL": { name: "Marshall Islands", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 2984 }, { year: 2000, population: 3942 }, { year: 2020, population: 5208 } ] },
+
+  "MRT": { name: "Mauritania", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 1768 }, { year: 2000, population: 2336 }, { year: 2020, population: 3086 } ] },
+
+  "MUS": { name: "Mauritius", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 176206 }, { year: 2000, population: 232789 }, { year: 2020, population: 307515 } ] },
+
+  "MCO": { name: "Monaco", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 17190 }, { year: 2000, population: 22710 }, { year: 2020, population: 30000 } ] },
+
+  "MNG": { name: "Mongolia", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 639 }, { year: 2000, population: 845 }, { year: 2020, population: 1116 } ] },
+
+  "MNE": { name: "Montenegro", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 11694 }, { year: 2000, population: 15449 }, { year: 2020, population: 20408 } ] },
+
+  "MAR": { name: "Morocco", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 13126 }, { year: 2000, population: 17341 }, { year: 2020, population: 22908 } ] },
+
+  "MMR": { name: "Myanmar", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 258165 }, { year: 2000, population: 341066 }, { year: 2020, population: 450549 } ] },
+
+  "NAM": { name: "Namibia", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 401100 }, { year: 2000, population: 529900 }, { year: 2020, population: 700000 } ] },
+
+  "NRU": { name: "Nauru", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 2269 }, { year: 2000, population: 2997 }, { year: 2020, population: 3959 } ] },
+
+  "NPL": { name: "Nepal", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 4757 }, { year: 2000, population: 6285 }, { year: 2020, population: 8302 } ] },
+
+  "NER": { name: "Niger", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 6684 }, { year: 2000, population: 8830 }, { year: 2020, population: 11665 } ] },
+
+  "MKD": { name: "North Macedonia", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 3865 }, { year: 2000, population: 5107 }, { year: 2020, population: 6746 } ] },
+
+  "NOR": { name: "Norway", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 94691 }, { year: 2000, population: 125097 }, { year: 2020, population: 165254 } ] },
+
+  "OMN": { name: "Oman", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 63030 }, { year: 2000, population: 83270 }, { year: 2020, population: 110000 } ] },
+
+  "PAK": { name: "Pakistan", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 1105890 }, { year: 2000, population: 1461010 }, { year: 2020, population: 1930000 } ] },
+
+  "PLW": { name: "Palau", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 3646 }, { year: 2000, population: 4817 }, { year: 2020, population: 6363 } ] },
+
+  "PSE": { name: "Palestine", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 45840 }, { year: 2000, population: 60560 }, { year: 2020, population: 80000 } ] },
+
+  "QAT": { name: "Qatar", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 200550 }, { year: 2000, population: 264950 }, { year: 2020, population: 350000 } ] },
+
+  "RUS": { name: "Russia", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 424020 }, { year: 2000, population: 560180 }, { year: 2020, population: 740000 } ] },
+
+  "KNA": { name: "Saint Kitts and Nevis", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 1948 }, { year: 2000, population: 2574 }, { year: 2020, population: 3400 } ] },
+
+  "LCA": { name: "Saint Lucia", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 58159 }, { year: 2000, population: 76836 }, { year: 2020, population: 101500 } ] },
+
+  "VCT": { name: "Saint Vincent and the Grenadines", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 4555 }, { year: 2000, population: 6018 }, { year: 2020, population: 7950 } ] },
+
+  "WSM": { name: "Samoa", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 21147 }, { year: 2000, population: 27938 }, { year: 2020, population: 36906 } ] },
+
+  "SMR": { name: "San Marino", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 16044 }, { year: 2000, population: 21196 }, { year: 2020, population: 28000 } ] },
+
+  "STP": { name: "São Tomé and Príncipe", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 68760 }, { year: 2000, population: 90840 }, { year: 2020, population: 120000 } ] },
+
+  "SAU": { name: "Saudi Arabia", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 378432 }, { year: 2000, population: 499952 }, { year: 2020, population: 660439 } ] },
+
+  "SEN": { name: "Senegal", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 223149 }, { year: 2000, population: 294805 }, { year: 2020, population: 389439 } ] },
+
+  "SRB": { name: "Serbia", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 147415 }, { year: 2000, population: 194753 }, { year: 2020, population: 257269 } ] },
+
+  "SYC": { name: "Seychelles", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 36071 }, { year: 2000, population: 47655 }, { year: 2020, population: 62952 } ] },
+
+  "SLE": { name: "Sierra Leone", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 99995 }, { year: 2000, population: 132105 }, { year: 2020, population: 174511 } ] },
+
+  "SGP": { name: "Singapore", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 139056 }, { year: 2000, population: 183710 }, { year: 2020, population: 242681 } ] },
+
+  "SLB": { name: "Solomon Islands", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 82557 }, { year: 2000, population: 109067 }, { year: 2020, population: 144078 } ] },
+
+  "SOM": { name: "Somalia", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 57 }, { year: 2000, population: 76 }, { year: 2020, population: 100 } ] },
+
+  "SSD": { name: "South Sudan", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 2263350 }, { year: 2000, population: 2990150 }, { year: 2020, population: 3950000 } ] },
+
+  "LKA": { name: "Sri Lanka", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 708801 }, { year: 2000, population: 936409 }, { year: 2020, population: 1237000 } ] },
+
+  "SDN": { name: "Sudan", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 171900 }, { year: 2000, population: 227100 }, { year: 2020, population: 300000 } ] },
+
+  "SUR": { name: "Suriname", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 68187 }, { year: 2000, population: 90083 }, { year: 2020, population: 119000 } ] },
+
+  "SWE": { name: "Sweden", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 60738 }, { year: 2000, population: 80242 }, { year: 2020, population: 106000 } ] },
+
+  "TWN": { name: "Taiwan", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 189090 }, { year: 2000, population: 249810 }, { year: 2020, population: 330000 } ] },
+
+  "THA": { name: "Thailand", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 222592 }, { year: 2000, population: 294070 }, { year: 2020, population: 388468 } ] },
+
+  "TGO": { name: "Togo", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 859455 }, { year: 2000, population: 1135440 }, { year: 2020, population: 1499921 } ] },
+
+  "TON": { name: "Tonga", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 7821 }, { year: 2000, population: 10332 }, { year: 2020, population: 13649 } ] },
+
+  "TTO": { name: "Trinidad and Tobago", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 163878 }, { year: 2000, population: 216502 }, { year: 2020, population: 286000 } ] },
+
+  "TUN": { name: "Tunisia", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 12606 }, { year: 2000, population: 16654 }, { year: 2020, population: 22000 } ] },
+
+  "TUR": { name: "Turkey", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 15471 }, { year: 2000, population: 20439 }, { year: 2020, population: 27000 } ] },
+
+  "TKM": { name: "Turkmenistan", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 287 }, { year: 2000, population: 379 }, { year: 2020, population: 500 } ] },
+
+  "TUV": { name: "Tuvalu", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 29 }, { year: 2000, population: 38 }, { year: 2020, population: 50 } ] },
+
+  "UKR": { name: "Ukraine", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 1926426 }, { year: 2000, population: 2545034 }, { year: 2020, population: 3362000 } ] },
+
+  "ARE": { name: "United Arab Emirates", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 73436 }, { year: 2000, population: 97017 }, { year: 2020, population: 128160 } ] },
+
+  "GBR": { name: "United Kingdom", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 3266100 }, { year: 2000, population: 4314900 }, { year: 2020, population: 5700000 } ] },
+
+  "UZB": { name: "Uzbekistan", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 1539 }, { year: 2000, population: 2033 }, { year: 2020, population: 2685 } ] },
+
+  "VAT": { name: "Vatican City", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 482 }, { year: 2000, population: 637 }, { year: 2020, population: 842 } ] },
+
+  "VUT": { name: "Vanuatu", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 20400 }, { year: 2000, population: 26951 }, { year: 2020, population: 35602 } ] },
+
+  "ESH": { name: "Western Sahara", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 93 }, { year: 2000, population: 123 }, { year: 2020, population: 163 } ] },
+
+  "YEM": { name: "Yemen", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 2375 }, { year: 2000, population: 3138 }, { year: 2020, population: 4145 } ] },
+
+  "ZWE": { name: "Zimbabwe", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 558955 }, { year: 2000, population: 738444 }, { year: 2020, population: 975488 } ] },
+
+  "AIA": { name: "Anguilla", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 461 }, { year: 2000, population: 609 }, { year: 2020, population: 804 } ] },
+
+  "ABW": { name: "Aruba", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 43814 }, { year: 2000, population: 57883 }, { year: 2020, population: 76464 } ] },
+
+  "CYM": { name: "Cayman Islands", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 5356 }, { year: 2000, population: 7076 }, { year: 2020, population: 9348 } ] },
+
+  "CUW": { name: "Curaçao", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 59310 }, { year: 2000, population: 78355 }, { year: 2020, population: 103507 } ] },
+
+  "GUF": { name: "French Guiana", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 95404 }, { year: 2000, population: 126041 }, { year: 2020, population: 166500 } ] },
+
+  "GRL": { name: "Greenland", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 64 }, { year: 2000, population: 84 }, { year: 2020, population: 111 } ] },
+
+  "GLP": { name: "Guadeloupe", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 197963 }, { year: 2000, population: 261533 }, { year: 2020, population: 345486 } ] },
+
+  "GUM": { name: "Guam", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 75309 }, { year: 2000, population: 99493 }, { year: 2020, population: 131430 } ] },
+
+  "MNP": { name: "Northern Mariana Islands", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 18974 }, { year: 2000, population: 25067 }, { year: 2020, population: 33113 } ] },
+
+  "HKG": { name: "Hong Kong", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 225762 }, { year: 2000, population: 298258 }, { year: 2020, population: 394000 } ] },
+
+  "MTQ": { name: "Martinique", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 178776 }, { year: 2000, population: 236184 }, { year: 2020, population: 312000 } ] },
+
+  "NCL": { name: "New Caledonia", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 85950 }, { year: 2000, population: 113550 }, { year: 2020, population: 150000 } ] },
+
+  "PRI": { name: "Puerto Rico", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 1146000 }, { year: 2000, population: 1514000 }, { year: 2020, population: 2000000 } ] },
+
+  "SPM": { name: "Saint Pierre and Miquelon", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 3209 }, { year: 2000, population: 4239 }, { year: 2020, population: 5600 } ] },
+
+  "TCA": { name: "Turks and Caicos Islands", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 1460 }, { year: 2000, population: 1929 }, { year: 2020, population: 2548 } ] },
+
+  "WLF": { name: "Wallis and Futuna", region: "Global/Other",
+    notes: "Wikipedia estimate (projected historical)",
+    data: [ { year: 1980, population: 7811 }, { year: 2000, population: 10319 }, { year: 2020, population: 13631 } ] },
 };
 
 export default globalCatholicData;
