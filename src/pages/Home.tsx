@@ -22,6 +22,28 @@ const usMiniData = [
   { year: 2023, priests: 34299 }
 ];
 
+// Sub-Saharan Africa Catholic population growth (millions)
+const africaMiniData = [
+  { year: 1965, catholics: 29 },
+  { year: 1975, catholics: 55 },
+  { year: 1985, catholics: 88 },
+  { year: 1995, catholics: 130 },
+  { year: 2005, catholics: 176 },
+  { year: 2015, catholics: 230 },
+  { year: 2023, catholics: 281 }
+];
+
+// Priestless parishes in the US
+const priestlessMiniData = [
+  { year: 1965, parishes: 549 },
+  { year: 1975, parishes: 702 },
+  { year: 1985, parishes: 1051 },
+  { year: 1995, parishes: 2200 },
+  { year: 2005, parishes: 3000 },
+  { year: 2015, parishes: 3400 },
+  { year: 2023, parishes: 3500 }
+];
+
 const MiniAreaChart = ({ data, dataKey, color }: { data: any[], dataKey: string, color: string }) => (
   <div style={{ width: '100%', height: '100%', padding: '20px 0 0 0', backgroundColor: '#fcfcfc' }}>
     <ResponsiveContainer width="100%" height="100%">
@@ -86,6 +108,7 @@ const Home: React.FC = () => {
               title="The rise of Catholicism in Sub-Saharan Africa"
               category="Regional Trends"
               excerpt="An in-depth look at how the center of gravity in the Catholic Church is shifting rapidly toward the Global South."
+              preview={<MiniAreaChart data={africaMiniData} dataKey="catholics" color="#b7791f" />}
             />
           </div>
           <Link to="/mass-attendance" style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -101,6 +124,7 @@ const Home: React.FC = () => {
               title="The impact of priestless parishes"
               category="Infrastructure"
               excerpt="How the consolidation of parishes and the lack of resident pastors are affecting rural Catholic communities."
+              preview={<MiniAreaChart data={priestlessMiniData} dataKey="parishes" color="#dd6b20" />}
             />
           </div>
           <Link to="/sacramental-pipeline" style={{ textDecoration: 'none', color: 'inherit' }}>
