@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import GlobalDashboard from '../components/GlobalDashboard';
-
+import UniversalDashboard from '../components/UniversalDashboard';
+import GlobalMap from '../components/GlobalMap';
+import GlobalChart from '../components/GlobalChart';
+import DataTable from '../components/DataTable';
 import globalCatholicData from '../data/globalCatholicData.json';
 
 const GlobalDemographics: React.FC = () => {
@@ -21,7 +23,44 @@ const GlobalDemographics: React.FC = () => {
           </p>
         </div>
 
-        <GlobalDashboard data={globalCatholicData} />
+        <UniversalDashboard 
+          chartComponent={<GlobalChart data={globalCatholicData} viewMode="absolute" />}
+          mapComponent={<GlobalMap data={globalCatholicData} viewMode="absolute" />}
+          tableComponent={
+            <DataTable 
+              columns={[
+                { header: 'Country/Region', key: 'name' },
+                { header: '1960 Population', key: 'pop1960', format: val => new Intl.NumberFormat('en-US').format(val) },
+                { header: '2022 Population', key: 'pop2022', format: val => new Intl.NumberFormat('en-US').format(val) },
+                { header: 'Absolute Change', key: 'absoluteChange', format: val => {
+                  const num = val;
+                  const sign = num > 0 ? '+' : '';
+                  return `${sign}${new Intl.NumberFormat('en-US').format(num)}`;
+                }},
+                { header: 'Relative Change', key: 'relativeChange', format: val => {
+                  const num = val;
+                  if (num === 0) return 'N/A';
+                  const sign = num > 0 ? '+' : '';
+                  return `${sign}${num.toFixed(0)}%`;
+                }}
+              ]}
+              data={Object.keys(globalCatholicData).map(iso => {
+                const country = (globalCatholicData as any)[iso];
+                const pop1960 = country.data.find((d: any) => d.year === 1960)?.population || 0;
+                const pop2022 = country.data.find((d: any) => d.year === 2022)?.population || 0;
+                const absoluteChange = pop2022 - pop1960;
+                const relativeChange = pop1960 > 0 ? (absoluteChange / pop1960) * 100 : 0;
+                return {
+                  name: country.name,
+                  pop1960,
+                  pop2022,
+                  absoluteChange,
+                  relativeChange
+                };
+              }).sort((a, b) => b.pop2022 - a.pop2022)}
+            />
+          }
+        />
 
         <div style={{ maxWidth: '800px', margin: '0 auto', fontSize: '1.1rem', lineHeight: '1.8', marginTop: '3rem' }}>
           <h2 style={{ color: '#2c5282' }}>The Shift to the Global South</h2>
