@@ -45,23 +45,23 @@ const priestlessMiniData = [
 ];
 
 const MiniAreaChart = ({ data, dataKey, color }: { data: any[], dataKey: string, color: string }) => (
-  <div style={{ width: '100%', height: '100%', padding: '20px 0 0 0', backgroundColor: '#fcfcfc' }}>
+  <div style={{ width: '100%', height: '100%', backgroundColor: 'transparent' }}>
     <ResponsiveContainer width="100%" height="100%">
-      <AreaChart data={data}>
+      <AreaChart data={data} margin={{ top: 20, right: 0, left: 0, bottom: 0 }}>
         <YAxis domain={['dataMin', 'dataMax']} hide />
-        <Area type="monotone" dataKey={dataKey} stroke={color} fill={color} fillOpacity={0.2} strokeWidth={2} isAnimationActive={false} />
+        <Area type="monotone" dataKey={dataKey} stroke={color} fill={color} fillOpacity={0.15} strokeWidth={2.5} isAnimationActive={false} />
       </AreaChart>
     </ResponsiveContainer>
   </div>
 );
 
 const MiniLineChart = ({ data, lines }: { data: any[], lines: {key: string, color: string}[] }) => (
-  <div style={{ width: '100%', height: '100%', padding: '20px 0 0 0', backgroundColor: '#fcfcfc' }}>
+  <div style={{ width: '100%', height: '100%', backgroundColor: 'transparent', padding: '10px 10px 0 10px' }}>
     <ResponsiveContainer width="100%" height="100%">
-      <LineChart data={data}>
+      <LineChart data={data} margin={{ top: 10, right: 10, left: 10, bottom: 10 }}>
         <YAxis domain={['dataMin', 'dataMax']} hide />
         {lines.map((line, i) => (
-          <Line key={i} type="monotone" dataKey={line.key} stroke={line.color} strokeWidth={2} dot={false} isAnimationActive={false} />
+          <Line key={i} type="monotone" dataKey={line.key} stroke={line.color} strokeWidth={2.5} dot={{ r: 2.5, fill: line.color, strokeWidth: 0 }} activeDot={false} isAnimationActive={false} />
         ))}
       </LineChart>
     </ResponsiveContainer>
@@ -69,12 +69,12 @@ const MiniLineChart = ({ data, lines }: { data: any[], lines: {key: string, colo
 );
 
 const MiniBarChart = ({ data, bars }: { data: any[], bars: {key: string, color: string}[] }) => (
-  <div style={{ width: '100%', height: '100%', padding: '20px 0 0 0', backgroundColor: '#fcfcfc' }}>
+  <div style={{ width: '100%', height: '100%', backgroundColor: 'transparent', padding: '10px' }}>
     <ResponsiveContainer width="100%" height="100%">
-      <BarChart data={data}>
+      <BarChart data={data} margin={{ top: 10, right: 10, left: 10, bottom: 0 }} barCategoryGap="20%">
         <YAxis domain={['dataMin', 'dataMax']} hide />
         {bars.map((bar, i) => (
-          <Bar key={i} dataKey={bar.key} fill={bar.color} isAnimationActive={false} />
+          <Bar key={i} dataKey={bar.key} fill={bar.color} radius={[2, 2, 0, 0]} isAnimationActive={false} />
         ))}
       </BarChart>
     </ResponsiveContainer>
