@@ -11,6 +11,9 @@ import GlobalDemographics from './pages/GlobalDemographics';
 import USIndicators from './pages/USIndicators';
 import MassAttendance from './pages/MassAttendance';
 import SacramentalPipeline from './pages/SacramentalPipeline';
+import AfricaTrends from './pages/AfricaTrends';
+import PriestlessParishes from './pages/PriestlessParishes';
+import About from './pages/About';
 
 function App() {
   return (
@@ -23,10 +26,13 @@ function App() {
         <main style={{ flex: '1' }}>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
             <Route path="/global" element={<GlobalDemographics />} />
             <Route path="/us-indicators" element={<USIndicators />} />
             <Route path="/mass-attendance" element={<MassAttendance />} />
             <Route path="/sacramental-pipeline" element={<SacramentalPipeline />} />
+            <Route path="/africa-trends" element={<AfricaTrends />} />
+            <Route path="/priestless-parishes" element={<PriestlessParishes />} />
           </Routes>
         </main>
 

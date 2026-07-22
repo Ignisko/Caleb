@@ -103,14 +103,14 @@ const Home: React.FC = () => {
               preview={<MiniLineChart data={usMiniData} lines={[{key: 'priests', color: '#c53030'}]} />}
             />
           </Link>
-          <div onClick={() => alert('Article coming soon!')}>
+          <Link to="/africa-trends" style={{ textDecoration: 'none', color: 'inherit' }}>
             <ArticleCard 
               title="The rise of Catholicism in Sub-Saharan Africa"
               category="Regional Trends"
               excerpt="An in-depth look at how the center of gravity in the Catholic Church is shifting rapidly toward the Global South."
               preview={<MiniAreaChart data={africaMiniData} dataKey="catholics" color="#b7791f" />}
             />
-          </div>
+          </Link>
           <Link to="/mass-attendance" style={{ textDecoration: 'none', color: 'inherit' }}>
             <ArticleCard 
               title="Mass attendance post-Vatican II"
@@ -119,14 +119,14 @@ const Home: React.FC = () => {
               preview={<MiniLineChart data={massAttendanceData} lines={[{key: 'USA', color: '#2c5282'}, {key: 'France', color: '#c53030'}, {key: 'Ireland', color: '#276749'}]} />}
             />
           </Link>
-          <div onClick={() => alert('Article coming soon!')}>
+          <Link to="/priestless-parishes" style={{ textDecoration: 'none', color: 'inherit' }}>
             <ArticleCard 
               title="The impact of priestless parishes"
               category="Infrastructure"
               excerpt="How the consolidation of parishes and the lack of resident pastors are affecting rural Catholic communities."
               preview={<MiniAreaChart data={priestlessMiniData} dataKey="parishes" color="#dd6b20" />}
             />
-          </div>
+          </Link>
           <Link to="/sacramental-pipeline" style={{ textDecoration: 'none', color: 'inherit' }}>
             <ArticleCard 
               title="The Sacramental Pipeline"
